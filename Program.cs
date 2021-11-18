@@ -38,12 +38,12 @@ namespace Thomas_Saaty
             {
                 for (int lines = columns + 1; lines < amountCrit; lines++)
                 {
-                    Console.WriteLine($"Насколько критерий под номером {columns + 1} важнее критеря под номером {lines}?");
-                    Console.WriteLine($"Введите положительное целое или дробное десятичное число больше нуля, но не больше десяти; через enter:");
+                    Console.WriteLine($"Насколько критерий под номером {columns} важнее критерия под номером {lines}?");
+                    Console.WriteLine($"Введите положительное целое или дробное десятичное число больше нуля, но не больше девяти; через enter:");
                     while (true) //цикл проверки числа
                     {
 
-                        if (double.TryParse(Console.ReadLine(), out double x) &&(x>0)&&(x<=10)) //условие проверки
+                        if (double.TryParse(Console.ReadLine(), out double x) &&(x>0)&&(x<=9)) //условие проверки
                         {
                             matrix[columns][lines] = x;
                             break; //выход из цикла проверки
@@ -120,10 +120,10 @@ namespace Thomas_Saaty
                 }
             }
 
-            Console.Write($"Весовые коэффициеты: \n"); //вывод результата
+            Console.Write($"Весовые коэффициенты: \n"); //вывод результата
             for (int i = 0; i < amountCrit; i++)
             {
-                Console.WriteLine($"Под номером {i + 1} = {weitcoef[i]}.");
+                Console.WriteLine($"Под номером {i} = {weitcoef[i]}.");
             }
 
         }
