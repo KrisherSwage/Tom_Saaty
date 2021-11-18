@@ -39,11 +39,11 @@ namespace Thomas_Saaty
                 for (int lines = columns + 1; lines < amountCrit; lines++)
                 {
                     Console.WriteLine($"Насколько критерий под номером {columns + 1} важнее критеря под номером {lines}?");
-                    Console.WriteLine($"Введите целое или дробное десятичное число, через enter");
+                    Console.WriteLine($"Введите положительное целое или дробное десятичное число больше нуля, но не больше десяти; через enter:");
                     while (true) //цикл проверки числа
                     {
 
-                        if (double.TryParse(Console.ReadLine(), out double x)) //условие проверки
+                        if (double.TryParse(Console.ReadLine(), out double x) &&(x>0)&&(x<=10)) //условие проверки
                         {
                             matrix[columns][lines] = x;
                             break; //выход из цикла проверки
